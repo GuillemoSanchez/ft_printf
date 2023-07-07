@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guillermo <guillermo@student.42.fr>        +#+  +:+       +#+        */
+/*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 14:45:26 by guisanch          #+#    #+#             */
-/*   Updated: 2023/07/07 00:44:31 by guillermo        ###   ########.fr       */
+/*   Updated: 2023/07/07 12:08:16 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,5 @@ int	ft_printf(char const *str, ...)
 		tmp++;
 	}
 	va_end(arg);
-	return(total_write);
-}
-
-int main()
-{
-	ft_printf("Hola buenos dias");
-	return 0;
+	return (total_write);
 }
