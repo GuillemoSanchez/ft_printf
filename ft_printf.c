@@ -6,7 +6,7 @@
 /*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 14:45:26 by guisanch          #+#    #+#             */
-/*   Updated: 2023/07/07 12:08:16 by guisanch         ###   ########.fr       */
+/*   Updated: 2023/07/13 19:44:06 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,30 +54,36 @@ void	ft_parse_arg(char str, va_list arg, int *total_write)
 	}
 }
 
+void	incraese_values(char const **str, int *total_write)
+{
+	(*str)++;
+	(*total_write)++;
+}
+
 int	ft_printf(char const *str, ...)
 {
 	va_list		arg;
-	const char	*tmp;
 	int			total_write;
 
 	total_write = 0;
 	va_start(arg, str);
-	tmp = str;
-	while (*tmp != '\0')
+	while (*str != '\0')
 	{
-		while (*tmp != '%')
+		while (*str != '%')
 		{
-			if (*tmp == '\0')
+			if (*str == '\0')
 			{
+				va_end(arg);
 				return (total_write);
 			}
-			ft_putchar(*tmp);
-			tmp++;
-			total_write++;
+			ft_putchar(*str);
+			incraese_values(&str, &total_write);
 		}
-		tmp++;
-		ft_parse_arg(*tmp, arg, &total_write);
-		tmp++;
+		str++;
+		if (*str == '\0')
+			break ;
+		ft_parse_arg(*str, arg, &total_write);
+		str++;
 	}
 	va_end(arg);
 	return (total_write);

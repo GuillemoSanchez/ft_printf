@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: guillermo <guillermo@student.42.fr>        +#+  +:+       +#+        */
+/*   By: guisanch <guisanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 14:52:10 by guisanch          #+#    #+#             */
-/*   Updated: 2023/07/06 13:12:24 by guillermo        ###   ########.fr       */
+/*   Updated: 2023/07/12 21:30:48 by guisanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ void	ft_parse_arg(char str, va_list arg, int *total_write);
 void	ft_print_char(va_list arg, int *total_write);
 void	ft_print_string(va_list arg, int *total_write);
 void	ft_print_int(va_list arg, char str, int *total_write);
-void	ft_print_unsig_int (va_list arg, char str, int *total_write);
+void	ft_print_unsig_int(va_list arg, char str, int *total_write);
 void	ft_print_hexa(va_list arg, int *total_write, char str);
 void	ft_print_pointer(va_list arg, int *total_write, char str);
 int		ft_count_num(unsigned long long number, int base);
 char	*convertidor(unsigned long long num, int base, char chr);
+int		ft_printf(char const *str, ...);
 
 #endif
